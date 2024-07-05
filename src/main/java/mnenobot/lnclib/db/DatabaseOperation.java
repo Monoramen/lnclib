@@ -1,0 +1,28 @@
+package mnenobot.lnclib.db;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public abstract class DatabaseOperation {
+    protected abstract  String getQuerry();
+    protected abstract void setParameters(PreparedStatement statement) throws SQLException; //бросает  исключения
+    protected abstract void handleResults(ResultSet resultSet) throws SQLException;
+
+    public void execute(){
+        try(Connection connection = DatabaseConnection.connect()) {
+            PreparedStatement statement = connection.prepareStatement(getQuerry());
+            setParameters(statement);
+            if (statement.execute()) {
+                ResultSet resultSet = statement.getResultSet();
+                handleResults(resultSet);
+            } else {
+                statement.executeUpdate(); //если ничего не получили, то обновляем состояние
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+}
+
