@@ -4,7 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/*
+* DatabaseOperation Абстратный класс создает подключение 
+* @getQuerry Получате queery ответ
+* @setParameters устанавливает состояние
+* @handleResults получаем queery запрос из базы
+* @execute выполняет подключение
+*/
 public abstract class DatabaseOperation {
     protected abstract  String getQuerry();
     protected abstract void setParameters(PreparedStatement statement) throws SQLException; //бросает  исключения

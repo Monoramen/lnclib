@@ -8,8 +8,10 @@ public class ParseFile {
     public static void main(String[] args) {
        // String path = "/data/semantics_simple.csv";
         DatabaseSetup.createTables();
-
-        String semanticsSimpleFile = "data/emo_dict.csv";
+        //data/emo_dict.csv
+        ///data/kartaslovsent.csv
+        System.out.println("\t========Начинаю создавать коды для слов.... =========\n".repeat(10));
+        String semanticsSimpleFile = "data/kartaslovsent.csv";
 
         AbstractCSVReader reader = new SimpleReader();
         reader.readDataLineByLine(semanticsSimpleFile);
