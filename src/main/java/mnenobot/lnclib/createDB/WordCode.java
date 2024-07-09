@@ -1,7 +1,6 @@
 package mnenobot.lnclib.createDB;
 
 import mnenobot.lnclib.AbstractLetters;
-import mnenobot.lnclib.Letters;
 
 public class WordCode {
     private final AbstractLetters letters;

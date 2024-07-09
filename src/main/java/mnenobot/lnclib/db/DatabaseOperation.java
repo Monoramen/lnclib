@@ -16,6 +16,7 @@ public abstract class DatabaseOperation {
     protected abstract void setParameters(PreparedStatement statement) throws SQLException; //бросает  исключения
     protected abstract void handleResults(ResultSet resultSet) throws SQLException;
 
+
     public void execute(){
         try(Connection connection = DatabaseConnection.connect()) {
             PreparedStatement statement = connection.prepareStatement(getQuerry());

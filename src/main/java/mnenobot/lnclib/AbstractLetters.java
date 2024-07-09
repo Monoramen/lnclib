@@ -24,7 +24,9 @@ public abstract class AbstractLetters implements Letters {
         }
         return null; // return null if letter not found
     }
-
+    /*
+    * Этот метод собирает сообщение из буквенноцифрового кода
+    * */
     @Override
     public String getCodesString() {
         StringBuilder msg = new StringBuilder();

@@ -1,7 +1,7 @@
-package mnenobot.lnclib.createDB;
+package mnenobot.lnclib;
 
-import mnenobot.lnclib.AbstractCSVReader;
-import mnenobot.lnclib.SimpleReader;
+import mnenobot.lnclib.createDB.DatabaseSetup;
+import mnenobot.lnclib.db.SortCodeDataList;
 
 // CreateDict - читает данные из файла
 public class ParseFile {
@@ -10,12 +10,14 @@ public class ParseFile {
         DatabaseSetup.createTables();
         //data/emo_dict.csv
         ///data/kartaslovsent.csv
-        System.out.println("\t========Начинаю создавать коды для слов.... =========\n".repeat(10));
-        String semanticsSimpleFile = "data/kartaslovsent.csv";
+        ///data/semantics.csv
+        //System.out.println("\t========Начинаю создавать коды для слов.... =========\n".repeat(10));
+        //String semanticsSimpleFile = "data/semantics.csv";
 
-        AbstractCSVReader reader = new SimpleReader();
-        reader.readDataLineByLine(semanticsSimpleFile);
-
+        //AbstractCSVReader reader = new SimpleReader();
+        //reader.readDataLineByLine(semanticsSimpleFile);
+        SortCodeDataList codesList = new SortCodeDataList();
+        System.out.println(codesList.getSortedData());
     }
 }
 
