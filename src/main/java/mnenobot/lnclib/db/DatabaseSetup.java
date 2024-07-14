@@ -24,32 +24,12 @@ public class DatabaseSetup {
                     ")";
             statement.execute(createWordsTable);
 
-            String createWordsEmoTable = "CREATE TABLE IF NOT EXISTS ru_emo_dict (" +
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "word_id INTEGER NOT NULL," +
-                    "type TEXT," +
-                    "value REAL," +
-                    "FOREIGN KEY (word_id) REFERENCES ru_words (id)" +
-                    ")";
-            statement.execute(createWordsEmoTable);
-
-            String createSemanticsTable = "CREATE TABLE IF NOT EXISTS ru_semantics (" +
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "word_id INTEGER," +
-                    "category TEXT," +
-                    "subcategory TEXT," +
-                    "score REAL," +
-                    "FOREIGN KEY (word_id) REFERENCES ru_words (id)" +
-                    ")";
-            statement.execute(createSemanticsTable);
 
             String createAssocTable = "CREATE TABLE IF NOT EXISTS ru_assoc (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "word_id INTEGER," +
                     "associated_word_id INTEGER," +
                     "part_of_speech TEXT," +
-                    "type TEXT," +
-                    "score REAL," +
                     "FOREIGN KEY (word_id) REFERENCES ru_words (id)," +
                     "FOREIGN KEY (associated_word_id) REFERENCES ru_words (id)" +
                     ")";
