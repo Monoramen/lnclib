@@ -4,9 +4,8 @@ import mnenobot.lnclib.createDB.AddCodeOperation;
 import mnenobot.lnclib.createDB.AddWordOperation;
 import mnenobot.lnclib.createDB.GetCodeIdOperation;
 
-import java.util.List;
 
-public class DBOperation {
+public class CodeWordImporter {
     public static void addCode(String code) {
         new AddCodeOperation(code).execute();
     }

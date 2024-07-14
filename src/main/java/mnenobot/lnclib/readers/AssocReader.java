@@ -1,6 +1,6 @@
 package mnenobot.lnclib.readers;
 
-import mnenobot.lnclib.db.DBOperation;
+import mnenobot.lnclib.db.CodeWordImporter;
 import mnenobot.lnclib.letterscode.RussianLetters;
 import mnenobot.lnclib.letterscode.WordCode;
 
@@ -22,9 +22,9 @@ public class AssocReader extends AbstractCSVReader {
 
         if (code1 != null && code1.matches("\\d+")) {
             try {
-                DBOperation.addCode(code1);
-                int codeId = DBOperation.getCodeId(code1);
-                DBOperation.addWord(codeId, word, partOfSpeech);
+                CodeWordImporter.addCode(code1);
+                int codeId = CodeWordImporter.getCodeId(code1);
+                CodeWordImporter.addWord(codeId, word, partOfSpeech);
             } catch (Exception e) {
                 System.out.println("Ошибка при добавлении слова в БД: " + word);
                 e.printStackTrace();

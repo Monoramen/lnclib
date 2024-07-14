@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import mnenobot.lnclib.createDB.DatabaseSetup;
 import mnenobot.lnclib.db.SelectWordsFromCode;
-import mnenobot.lnclib.db.SortCodeDataList;
+
 
 // CreateDict - читает данные из файла
 public class ParseFile  {
