@@ -32,4 +32,5 @@ public class AddWordOperation extends DatabaseOperation {
     protected void handleResults(ResultSet resultSet) {
         // Ничего не делаем для insert операции
     }
+
 }

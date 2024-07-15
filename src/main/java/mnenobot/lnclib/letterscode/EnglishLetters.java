@@ -3,7 +3,7 @@ package mnenobot.lnclib.letterscode;
 import java.util.Map;
 import java.util.HashMap;
 
-class EnglishLetters extends AbstractLetters {
+public class EnglishLetters extends AbstractLetters {
 
     private static final Map<Integer, String[]> CODES = new HashMap<>();
 
