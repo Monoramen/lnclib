@@ -39,7 +39,8 @@ public class AssocReader extends AbstractCSVReader {
                 //А теперь надо связать слово и ассоциацию
                 AddAssociate addAssociate = new AddAssociate(word, assoc, partOfSpeech);
                 addAssociate.execute();
-                System.out.println(String.format("%d line \t:Слово %s :\t ассоциация %s", counter, word, assoc));
+                System.out.println(String.format(
+                            "%d line \t:Слово %s :\t ассоциация %s", counter, word, assoc));
                 
             } catch (Exception e) {
                 System.out.println("Ошибка при добавлении слова в БД: " + word);
