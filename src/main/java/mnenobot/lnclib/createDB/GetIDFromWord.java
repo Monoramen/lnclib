@@ -13,7 +13,7 @@ public class GetIDFromWord extends DatabaseOperation {
 
     @Override
     protected String getQuerry() {
-        return "SELECT id FROM ru_words WHERE id = ?";
+        return "SELECT id FROM ru_words WHERE word = ?";
     }
 
     @Override
