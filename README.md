@@ -9,7 +9,7 @@ SimpleReader - добавляет  в базу слова и соответст�
     // data/kartaslovsent.csv
     // data/semantics.csv
 
-    System.out.println("\t========Начинаю создавать коды для слов.... =========\n".repeat(10));
+    System.out.println("\t========Начинаю создавать коды для слов.... =========\n");
     String semanticsSimpleFile = "data/semantics.csv";
     AbstractCSVReader reader = new SimpleReader();
     reader.readDataLineByLine(semanticsSimpleFile);
@@ -19,7 +19,7 @@ SimpleReader - добавляет  в базу слова и соответст�
 ```java
     // data/assoc.csv
   
-    System.out.println("\t========Начинаю создавать коды для слов ассоциаций.... =========\n".repeat(10));
+    System.out.println("\t========Начинаю создавать коды для слов ассоциаций.... =========\n");
     String pathFile = "data/assoc.csv";
     AbstractCSVReader reader = new AssocReader();
     reader.readDataLineByLine(pathFile);

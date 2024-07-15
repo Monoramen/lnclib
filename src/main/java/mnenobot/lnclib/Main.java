@@ -15,7 +15,7 @@ public class Main  {
         //SortCodeDataList codesList = new SortCodeDataList();
         //System.out.println(codesList.getSortedData());
 
-    System.out.println("\t========Начинаю создавать коды для слов ассоциаций.... =========\n".repeat(10));
+    System.out.println("\t========Начинаю создавать коды для слов ассоциаций.... =========\n");
     String pathFile = "data/assoc.csv";
     AbstractCSVReader reader = new AssocReader();
     reader.readDataLineByLine(pathFile);

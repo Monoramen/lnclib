@@ -8,9 +8,11 @@ import mnenobot.lnclib.letterscode.WordCode;
 
 public class AssocReader extends AbstractCSVReader {
     private final WordCode wordCode;
-
+    private int counter;
+    
     public AssocReader() {
         this.wordCode = new WordCode(new RussianLetters());
+        this.counter = 0;
     }
 
     @Override
@@ -18,13 +20,14 @@ public class AssocReader extends AbstractCSVReader {
         String word = row[0];
         String assoc = row[1];
         String partOfSpeech = row[2];
-        int counter = 0;
+        
 
         String code1 = wordCode.getCode(word);
         String code2 = wordCode.getCode(assoc);
 
         if ((code1 != null && code1.matches("\\d+")) && (code2 != null && code2.matches("\\d+"))) {
             try {
+                counter++;
                 CodeWordImporter.addCode(code1);
                 int codeId = CodeWordImporter.getCodeId(code1);
                 CodeWordImporter.addWord(codeId, word, partOfSpeech);
@@ -36,7 +39,7 @@ public class AssocReader extends AbstractCSVReader {
                 //А теперь надо связать слово и ассоциацию
                 AddAssociate addAssociate = new AddAssociate(word, assoc, partOfSpeech);
                 addAssociate.execute();
-                System.out.println(String.format("%d line \t:Слово %s :\t ассоциация %s \n", counter, word, assoc));
+                System.out.println(String.format("%d line \t:Слово %s :\t ассоциация %s", counter, word, assoc));
                 
             } catch (Exception e) {
                 System.out.println("Ошибка при добавлении слова в БД: " + word);
