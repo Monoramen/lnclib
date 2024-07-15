@@ -28,19 +28,13 @@ public class AssocReader extends AbstractCSVReader {
                 int codeId = CodeWordImporter.getCodeId(code1);
                 CodeWordImporter.addWord(codeId, word, partOfSpeech);
                 
-
                 CodeWordImporter.addCode(code2);
                 int codeId2 = CodeWordImporter.getCodeId(code2);
                 CodeWordImporter.addWord(codeId2, assoc, partOfSpeech);
 
-                
+                //А теперь надо связать слово и ассоциацию
                 AddAssociate addAssociate = new AddAssociate(word, assoc, partOfSpeech);
                 addAssociate.execute();
-
-                //А теперь надо связать слово и ассоциацию
-                //getWordId
-                //AddAssociate associate = new AddAssociate(w, codeId2, partOfSpeech);
-
             } catch (Exception e) {
                 System.out.println("Ошибка при добавлении слова в БД: " + word);
                 e.printStackTrace();
