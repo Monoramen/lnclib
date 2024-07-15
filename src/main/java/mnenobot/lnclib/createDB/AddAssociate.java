@@ -17,7 +17,7 @@ public class AddAssociate extends DatabaseOperation {
 
     @Override
     protected String getQuerry() {
-        return "INSERT OR IGNORE INTO ru_assoc (word_id, associated_word_id, part_of_speech) VALUES ((SELECT id FROM ru_words WHERE word = ?), (SELECT id FROM ru_words WHERE word = ?), ?)";
+        return "INSERT OR IGNORE INTO ru_assoc (word_id, associated_word_id, part_of_speech) VALUES (?, ?, ?)";
     }
 
     @Override
